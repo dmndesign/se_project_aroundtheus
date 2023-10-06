@@ -1,5 +1,6 @@
 .footer {
   margin-top: 67px;
+  margin-bottom: 60px;
 }
 
 .footer__copyright {
@@ -10,4 +11,20 @@
   letter-spacing: 0em;
   text-align: left;
   color: #545454;
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    margin-top: 48px;
+    margin-bottom: 36px;
+  }
+
+  .footer__copyright {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 }

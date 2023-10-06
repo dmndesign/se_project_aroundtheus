@@ -1,7 +1,22 @@
 .header {
   border-bottom: solid 1px #545454;
+  margin-top: 45px;
 }
 
 .header__logo {
-  margin: 0 0 41px;
+  margin-bottom: 41px;
+  width: 173px;
+  height: 33px;
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 282px;
+    margin-top: 28px;
+  }
+  .header__logo {
+    width: 126px;
+    height: 24px;
+    margin-bottom: 32px;
+  }
 }

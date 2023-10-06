@@ -29,7 +29,6 @@
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0em;
-  text-align: left;
   grid-area: title;
   margin: 0;
 }
@@ -41,7 +40,6 @@
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0em;
-  text-align: left;
   grid-area: description;
   margin: 0;
 }
@@ -55,6 +53,7 @@
   width: 24px;
   grid-area: button;
   align-self: center;
+  border: solid 1px white;
 }
 
 .profile__edit-button:hover {
@@ -73,4 +72,60 @@
 
 .profile__add-button:hover {
   opacity: 60%;
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 282px;
+  }
+
+  .profile__image {
+    margin: 0 0 30px;
+  }
+
+  .profile__content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  .profile__description {
+    width: 100%;
+    text-align: center;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 100%;
+    background: transparent url(../images/mobile\ add\ button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 36px;
+  }
+
+  .profile__edit-button {
+    height: 18px;
+    width: 18px;
+  }
+
+  .profile__title {
+    font-family: Inter, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: center;
+  }
 }
