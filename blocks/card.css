@@ -11,10 +11,10 @@
 
 .card__description {
   display: flex;
-  color: black;
   background-color: white;
   border-radius: 0px 0px 10px 10px;
   align-items: center;
+  padding: 0px 20px;
 }
 
 .card__like-button {
@@ -25,4 +25,18 @@
   width: 21px;
   height: 18px;
   margin-left: auto;
+}
+
+.card__like-button:hover {
+  opacity: 50%;
+}
+
+.card__title {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
 }
