@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+}
+
+.card__description {
+  display: flex;
+  color: black;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  align-items: center;
+}
+
+.card__like-button {
+  background: transparent url(../images/heart-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0px;
+  width: 21px;
+  height: 18px;
+  margin-left: auto;
+}
