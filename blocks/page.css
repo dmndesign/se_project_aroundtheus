@@ -20,7 +20,7 @@
 
 @media screen and (max-width: 1100px) {
   .page__section {
-    max-width: calc(100%-40px);
+    max-width: calc(100% - 40px);
   }
   .page {
     margin-left: 19px;

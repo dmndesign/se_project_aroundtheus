@@ -48,7 +48,6 @@
   background: transparent url(../images/Edit\ Button.svg);
   background-repeat: no-repeat;
   background-position: center;
-  border: 0px;
   height: 24px;
   width: 24px;
   grid-area: button;
@@ -96,7 +95,6 @@
 
   .profile__description {
     width: 100%;
-    text-align: center;
     font-family: Inter, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
