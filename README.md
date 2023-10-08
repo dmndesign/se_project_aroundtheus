@@ -13,3 +13,7 @@ CSS grid was very helpful to build up gallery in project.
 **Future Updates**
 
 In future we will add some "magic" to our project which called JavaScript. So "add button" will add images, "edit button" will let us edit "profile name" and click on "profile image" let us edit it aswell.
+
+**GitHub Pages Link**
+
+https://dmndesign.github.io/se_project_aroundtheus/

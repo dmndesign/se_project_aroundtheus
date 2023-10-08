@@ -23,7 +23,7 @@
     max-width: calc(100% - 40px);
   }
   .page {
-    margin-left: 19px;
-    margin-right: 19px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
