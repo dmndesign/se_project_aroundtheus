@@ -39,7 +39,7 @@
   flex-direction: column;
 }
 
-.modal__form__name {
+.modal__form-name {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -54,7 +54,7 @@
   border-radius: 0px;
 }
 
-.modal__form__description {
+.modal__form-description {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -113,11 +113,11 @@
     right: 0px;
   }
 
-  .modal__form_name {
+  .modal__form-name {
     margin: 0 0 30px;
   }
 
-  .modal__form__description {
+  .modal__form-description {
     margin: 0 0 45px;
   }
 
