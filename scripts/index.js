@@ -25,4 +25,23 @@ const initialCards = [
   }),
 ];
 
-console.log(initialCards);
+const profileEditButton = document.querySelector("#profile-edit-button");
+const profileEditModal = document.querySelectorAll("#profile-edit-modal");
+
+profileEditButton.addEventListener("click", function () {
+  profileEditModal.classList.toggle("modal__opened");
+});
+
+const profileCloseButton = document.querySelector(".modal__close-button");
+
+profileCloseButton.addEventListener("click", function () {
+  profileEditModal.classList.toggle("modal__opened");
+});
+
+let profileName = document.querySelector(".modal__form-name").value;
+let profileDescription = document.querySelector(
+  ".modal__form-description"
+).value;
+
+profileName.textContent = "Jacques Cousteau";
+profileDescription.textContent = "Explorer";
