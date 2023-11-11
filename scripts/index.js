@@ -55,10 +55,12 @@ profileCloseButton.addEventListener("click", toggleForm);
 const profileSaveButton = profileEditModal.querySelector(".modal__save-button");
 
 //New function which will make Save button work properly
-function saveFormChanges() {
+function saveFormChanges(event) {
+  event.preventDefault();
   profileName.textContent = profileFormName.value;
   profileDescription.textContent = profileFormDescription.value;
   toggleForm();
 }
 
+//OnClick event which will save changes that we entered in form and close it
 profileSaveButton.addEventListener("click", saveFormChanges);
