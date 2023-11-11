@@ -25,23 +25,40 @@ const initialCards = [
   }),
 ];
 
+//Selecting buttons and form
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileCloseButton = profileEditModal.querySelector(
+  ".modal__close-button"
+);
 
-profileEditButton.addEventListener("click", function () {
+//Selecting title and description with form inputs
+let profileFormName = document.querySelector(".modal__form-name");
+let profileFormDescription = document.querySelector(".modal__form-description");
+let profileName = document.querySelector(".profile__title");
+let profileDescription = document.querySelector(".profile__description");
+
+//Function which add class that change visibility of form
+function toggleForm() {
   profileEditModal.classList.toggle("modal__opened");
-});
+  /*Form inputs values of name and description will be same,
+  as current name and description on page when form opened*/
+  profileFormName.value = profileName.textContent;
+  profileFormDescription.value = profileDescription.textContent;
+}
 
-const profileCloseButton = document.querySelector(".modal__close-button");
+//Two onClick events one open form and another close form
+profileEditButton.addEventListener("click", toggleForm);
+profileCloseButton.addEventListener("click", toggleForm);
 
-profileCloseButton.addEventListener("click", function () {
-  profileEditModal.classList.toggle("modal__opened");
-});
+//Selecting save button
+const profileSaveButton = profileEditModal.querySelector(".modal__save-button");
 
-let profileName = document.querySelector(".modal__form-name").value;
-let profileDescription = document.querySelector(
-  ".modal__form-description"
-).value;
+//New function which will make Save button work properly
+function saveFormChanges() {
+  profileName.textContent = profileFormName.value;
+  profileDescription.textContent = profileFormDescription.value;
+  toggleForm();
+}
 
-profileName.textContent = "Jacques Cousteau";
-profileDescription.textContent = "Explorer";
+profileSaveButton.addEventListener("click", saveFormChanges);
