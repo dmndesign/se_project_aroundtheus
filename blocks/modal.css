@@ -110,6 +110,10 @@
     margin: 0 0 75px;
   }
 
+  .modal__save-button {
+    height: 46px;
+  }
+
   .modal__close-button {
     width: 26px;
     height: 26px;
@@ -126,6 +130,7 @@
   }
 
   .modal__container {
-    min-width: 0px !important;
+    min-width: 238px;
+    padding: 25px 22px;
   }
 }
