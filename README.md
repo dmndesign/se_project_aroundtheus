@@ -6,7 +6,7 @@ Current project is "user profile with gallery". You can see in it "profile image
 
 **Functionality and Technologies**
 
-For this project we used HTMl, BEM and CSS.
+For this project we used HTMl, BEM and CSS, and JavaScript as well.
 Also we used Media Queries to make our project responsive.
 CSS grid was very helpful to build up gallery in project.
 Use of JavaScript event listeners made our page intercative.
