@@ -126,6 +126,6 @@
   }
 
   .modal__container {
-    min-width: 282px;
+    min-width: 0px !important;
   }
 }
