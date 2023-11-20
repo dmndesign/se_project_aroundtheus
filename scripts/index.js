@@ -100,8 +100,12 @@ function getCardData(cardData) {
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
-  cardList.prepend(cardElement);
+
   return cardElement;
+}
+
+function renderCard(cardData) {
+  cardList.prepend(getCardData(cardData));
 }
 
 function saveFormChanges(event) {
@@ -116,7 +120,7 @@ function newplaceCreate(event) {
   event.preventDefault();
   const link = newplaceFormLink.value;
   const name = newplaceFormTitle.value;
-  getCardData({
+  renderCard({
     name: name,
     link: link,
   });
@@ -125,7 +129,7 @@ function newplaceCreate(event) {
 
 //Function that will make all cards visible
 initialCards.forEach((cardData) => {
-  getCardData(cardData);
+  renderCard(cardData);
 });
 
 /*-----------------------------------------------------------------------------------*/
