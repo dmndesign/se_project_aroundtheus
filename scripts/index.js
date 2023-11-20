@@ -148,3 +148,6 @@ profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", togglePopup);
 newplaceAddButton.addEventListener("click", toggleNewplacePopup);
 newplaceClose.addEventListener("click", toggleNewplacePopup);
+
+//Change color of like button
+cardLikeButton.addEventListener("click", likeButtonBlack);
