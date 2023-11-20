@@ -72,6 +72,38 @@
         </form>
       </div>
     </div>
+    <!--Add card pop up-->
+    <div class="addcard" id="addcard-popup">
+      <div class="addcard__container">
+        <button
+          class="addcard__close-button"
+          type="button"
+          aria-label="close-button"
+        ></button>
+        <h3 class="addcard__title">New Place</h3>
+        <form class="addcard__form">
+          <input
+            class="addcard__form-title"
+            type="text"
+            name="Title"
+            placeholder="Title"
+          />
+          <input
+            class="addcard__form-description"
+            type="url"
+            name="Image link"
+            placeholder="Image link"
+          />
+          <button
+            class="addcard__submit-button"
+            type="submit"
+            aria-label="submit-button"
+          >
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
     <template id="card-template">
       <li class="card">
         <img src="" class="card__image" alt="" />

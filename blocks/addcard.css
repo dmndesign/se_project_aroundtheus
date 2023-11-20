@@ -1,0 +1,136 @@
+.addcard {
+  position: fixed;
+  background-color: #00000080;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 0 19px;
+}
+
+.addcard_opened {
+  display: flex;
+}
+
+.addcard__container {
+  position: relative;
+  margin: auto;
+  padding: 36px;
+  box-shadow: 0px 0px 25px 0px #00000026;
+  background-color: white;
+  border-radius: 10px;
+  min-width: 430px;
+}
+
+.addcard__title {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0 0 54px;
+}
+
+.addcard__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addcard__form-title {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 100%;
+  height: 27px;
+  margin: 0 0 29px;
+  border: 0;
+  border-bottom: 1px solid #00000033;
+  border-radius: 0px;
+}
+
+.addcard__form-description {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 100%;
+  height: 27px;
+  border: 0;
+  border-bottom: 1px solid #00000033;
+  margin: 0 0 48px;
+  border-radius: 0px;
+}
+
+.addcard__close-button {
+  background-image: url(../images/Close\ Icon.svg);
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -48px;
+  right: -48px;
+  rotate: 45px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.addcard__submit-button {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  border-radius: 0px;
+  height: 50px;
+  width: 100%;
+  border: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+.addcard__save-button:hover {
+  opacity: 80%;
+}
+
+@media screen and (max-width: 775px) {
+  .addcard__title {
+    font-size: 18px;
+    margin: 0 0 75px;
+  }
+
+  .addcard__save-button {
+    height: 46px;
+  }
+
+  .addcard__close-button {
+    width: 26px;
+    height: 26px;
+    top: -40px;
+    right: 0px;
+  }
+
+  .addcard__form-name {
+    margin: 0 0 30px;
+  }
+
+  .addcard__form-description {
+    margin: 0 0 45px;
+  }
+
+  .addcard__container {
+    min-width: 238px;
+    padding: 25px 22px;
+  }
+}
