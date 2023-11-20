@@ -55,11 +55,6 @@ const cardList = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-//Selecting add card pop up elements
-const addNewCardButton = document.querySelector(".profile__add-button");
-const addNewCardContainer = document.querySelector("#addcard-button");
-const addNewCardForm = addNewCardContainer.querySelector(".addcard__form");
-
 /*-----------------------------------------------------------------------------*/
 /*----------------------------------FUNCTIONS----------------------------------*/
 /*-----------------------------------------------------------------------------*/
@@ -68,10 +63,7 @@ const addNewCardForm = addNewCardContainer.querySelector(".addcard__form");
 function togglePopup() {
   profileEditModal.classList.toggle("modal_opened");
 }
-//Function which add class that change visibility of addcard pop up
-function toggleNewcardPopup() {
-  addNewCardContainer.toggle("addcard_opened");
-}
+
 /*Function that makes inputs values of name and description being
 same as current name and description on page when form opened*/
 function openProfilePopup() {
@@ -121,4 +113,3 @@ profileEditForm.addEventListener("submit", saveFormChanges);
 //Two onClick events one open form and another close form
 profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", togglePopup);
-addNewCardButton.addEventListener("click", toggleNewcardPopup);
