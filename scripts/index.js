@@ -36,6 +36,10 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseButton = profileEditModal.querySelector(
   ".modal__close-button"
 );
+const newplaceAddButton = document.querySelector(".profile__add-button");
+const newplacePopup = document.querySelector("#newplace-popup");
+const newplaceClose = newplacePopup.querySelector(".newplace__close-button");
+const cardLikeButton = document.querySelector(".card__like-button");
 
 //Selecting title and description with form inputs
 const profileFormName = document.querySelector(".modal__form-name");
@@ -44,9 +48,12 @@ const profileFormDescription = document.querySelector(
 );
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
+const newplaceFormTitle = document.querySelector(".newplace__form-title");
+const newplaceFormLink = document.querySelector(".newplace__form-url");
 
 //Selecting form for submit event
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+const newplaceForm = newplacePopup.querySelector(".newplace__form");
 
 //Selecting card list
 const cardList = document.querySelector(".cards__list");
@@ -64,6 +71,16 @@ function togglePopup() {
   profileEditModal.classList.toggle("modal_opened");
 }
 
+//Function which will change visibility of newplace pop up
+function toggleNewplacePopup() {
+  newplacePopup.classList.toggle("newplace_opened");
+}
+
+//Function which will change like button color
+function likeButtonBlack() {
+  cardLikeButton.classList.toggle("card__like-button_black");
+}
+
 /*Function that makes inputs values of name and description being
 same as current name and description on page when form opened*/
 function openProfilePopup() {
@@ -72,17 +89,18 @@ function openProfilePopup() {
   togglePopup();
 }
 
-//Function which will take all cards from array
-function getCardElement(data) {
+//Function which will get card data
+function getCardData(cardData) {
   //Selecting card and cloning it same amount of times as array length
   const cardElement = cardTemplate.cloneNode(true);
   //Selecting images and title of our card
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   //Setting text, image and alt data same as arrays data
-  cardTitle.textContent = data.name;
-  cardImage.src = data.link;
-  cardImage.alt = data.name;
+  cardTitle.textContent = cardData.name;
+  cardImage.src = cardData.link;
+  cardImage.alt = cardData.name;
+  cardList.prepend(cardElement);
   return cardElement;
 }
 
@@ -93,10 +111,21 @@ function saveFormChanges(event) {
   togglePopup();
 }
 
+//Function which will add newplace card
+function newplaceCreate(event) {
+  event.preventDefault();
+  const link = newplaceFormLink.value;
+  const name = newplaceFormTitle.value;
+  getCardData({
+    name: name,
+    link: link,
+  });
+  toggleNewplacePopup();
+}
+
 //Function that will make all cards visible
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardList.append(cardElement);
+  getCardData(cardData);
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -105,11 +134,13 @@ initialCards.forEach((cardData) => {
 
 //OnClick event which will save changes that we entered in form and close it
 profileEditForm.addEventListener("submit", saveFormChanges);
-
+newplaceForm.addEventListener("submit", newplaceCreate);
 /*-----------------------------------------------------------------------------------*/
 /*----------------------------------EVENT LISTENERS----------------------------------*/
 /*-----------------------------------------------------------------------------------*/
 
-//Two onClick events one open form and another close form
+//Click events close, open pop ups
 profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", togglePopup);
+newplaceAddButton.addEventListener("click", toggleNewplacePopup);
+newplaceClose.addEventListener("click", toggleNewplacePopup);
