@@ -1,4 +1,4 @@
-# Project 3: Around The U.S.
+# Project: Around The U.S.
 
 **Project Description**
 
@@ -6,13 +6,15 @@ Current project is "user profile with gallery". You can see in it "profile image
 
 **Functionality and Technologies**
 
-For this project we used HTMl, BEM and CSS.
+For this project we used HTMl, BEM and CSS, and JavaScript as well.
 Also we used Media Queries to make our project responsive.
 CSS grid was very helpful to build up gallery in project.
+Use of JavaScript event listeners made our page intercative.
+Our gallery also builded from JavaScript code and functions.
 
 **Future Updates**
 
-In future we will add some "magic" to our project which called JavaScript. So "add button" will add images, "edit button" will let us edit "profile name" and click on "profile image" let us edit it aswell.
+In future we will be able to add gallery elements by click on "add button"
 
 **GitHub Pages Link**
 
