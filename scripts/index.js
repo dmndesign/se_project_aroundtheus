@@ -39,7 +39,6 @@ const profileCloseButton = profileEditModal.querySelector(
 const newplaceAddButton = document.querySelector(".profile__add-button");
 const newplacePopup = document.querySelector("#newplace-popup");
 const newplaceClose = newplacePopup.querySelector(".newplace__close-button");
-const cardLikeButton = document.querySelector(".card__like-button");
 
 //Selecting title and description with form inputs
 const profileFormName = document.querySelector(".modal__form-name");
@@ -76,11 +75,6 @@ function toggleNewplacePopup() {
   newplacePopup.classList.toggle("newplace_opened");
 }
 
-//Function which will change like button color
-function likeButtonBlack() {
-  cardLikeButton.classList.toggle("card__like-button_black");
-}
-
 /*Function that makes inputs values of name and description being
 same as current name and description on page when form opened*/
 function openProfilePopup() {
@@ -96,11 +90,15 @@ function getCardData(cardData) {
   //Selecting images and title of our card
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  //Selecting like button
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
   //Setting text, image and alt data same as arrays data
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
-  cardLikeButton.addEventListener("click", likeButtonBlack);
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_black");
+  });
   return cardElement;
 }
 
@@ -148,5 +146,3 @@ profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", togglePopup);
 newplaceAddButton.addEventListener("click", toggleNewplacePopup);
 newplaceClose.addEventListener("click", toggleNewplacePopup);
-
-//Change color of like button
