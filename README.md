@@ -11,10 +11,12 @@ Also we used Media Queries to make our project responsive.
 CSS grid was very helpful to build up gallery in project.
 Use of JavaScript event listeners made our page intercative.
 Our gallery also builded from JavaScript code and functions.
+There is feature of adding/removing/liking our cards.
+We can look on image and it's caption by clicking on it.
 
 **Future Updates**
 
-In future we will be able to add gallery elements by click on "add button"
+Changes that we made will stay as is after being reloaded.
 
 **GitHub Pages Link**
 
