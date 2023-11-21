@@ -100,7 +100,7 @@ function getCardData(cardData) {
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
-
+  cardLikeButton.addEventListener("click", likeButtonBlack);
   return cardElement;
 }
 
@@ -150,4 +150,3 @@ newplaceAddButton.addEventListener("click", toggleNewplacePopup);
 newplaceClose.addEventListener("click", toggleNewplacePopup);
 
 //Change color of like button
-cardLikeButton.addEventListener("click", likeButtonBlack);
