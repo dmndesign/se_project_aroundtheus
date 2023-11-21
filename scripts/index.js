@@ -92,12 +92,17 @@ function getCardData(cardData) {
   const cardTitle = cardElement.querySelector(".card__title");
   //Selecting like button
   const cardLikeButton = cardElement.querySelector(".card__like-button");
+  //Selecting delete button
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   //Setting text, image and alt data same as arrays data
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_black");
+  });
+  cardDeleteButton.addEventListener("click", () => {
+    cardList.remove(cardDeleteButton.closest("li"));
   });
   return cardElement;
 }
