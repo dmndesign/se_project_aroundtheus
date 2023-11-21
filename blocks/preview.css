@@ -19,6 +19,7 @@
   margin: auto;
   background-color: transparent;
   padding: 90px 0;
+  max-width: 100%;
 }
 
 .preview__image {
@@ -60,11 +61,11 @@
   }
 
   .preview__container {
+    max-width: 320px;
     padding: 134px 0px;
   }
 
   .preview__image {
-    min-width: 240px;
     height: 300px;
   }
 }

@@ -44,6 +44,7 @@ const previewCloseButton = previewImageContainer.querySelector(
   ".preview__close-button"
 );
 const previewImage = previewImageContainer.querySelector(".preview__image");
+const previewCaption = previewImageContainer.querySelector(".preview__caption");
 //Selecting title and description with form inputs
 const profileFormName = document.querySelector(".modal__form-name");
 const profileFormDescription = document.querySelector(
@@ -116,6 +117,7 @@ function getCardData(cardData) {
 
   cardImage.addEventListener("click", () => {
     previewImage.src = cardImage.src;
+    previewCaption.textContent = cardTitle.textContent;
     toggleImagePreview();
   });
 
