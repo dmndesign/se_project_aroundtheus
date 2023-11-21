@@ -39,7 +39,11 @@ const profileCloseButton = profileEditModal.querySelector(
 const newplaceAddButton = document.querySelector(".profile__add-button");
 const newplacePopup = document.querySelector("#newplace-popup");
 const newplaceClose = newplacePopup.querySelector(".newplace__close-button");
-
+const previewImageContainer = document.querySelector("#preview-image");
+const previewCloseButton = previewImageContainer.querySelector(
+  ".preview__close-button"
+);
+const previewImage = previewImageContainer.querySelector(".preview__image");
 //Selecting title and description with form inputs
 const profileFormName = document.querySelector(".modal__form-name");
 const profileFormDescription = document.querySelector(
@@ -70,11 +74,14 @@ function togglePopup() {
   profileEditModal.classList.toggle("modal_opened");
 }
 
-//Function which will change visibility of newplace pop up
+//Function which will toggle add card pop up
 function toggleNewplacePopup() {
   newplacePopup.classList.toggle("newplace_opened");
 }
-
+//Function which will toggle image preview
+function toggleImagePreview() {
+  previewImageContainer.classList.toggle("preview_opened");
+}
 /*Function that makes inputs values of name and description being
 same as current name and description on page when form opened*/
 function openProfilePopup() {
@@ -98,12 +105,20 @@ function getCardData(cardData) {
   cardTitle.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
+
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_black");
   });
+
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
+
+  cardImage.addEventListener("click", () => {
+    previewImage.src = cardImage.src;
+    toggleImagePreview();
+  });
+
   return cardElement;
 }
 
@@ -151,3 +166,5 @@ profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", togglePopup);
 newplaceAddButton.addEventListener("click", toggleNewplacePopup);
 newplaceClose.addEventListener("click", toggleNewplacePopup);
+//Close image preview on click
+previewCloseButton.addEventListener("click", toggleImagePreview);
