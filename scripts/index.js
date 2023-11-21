@@ -102,7 +102,7 @@ function getCardData(cardData) {
     cardLikeButton.classList.toggle("card__like-button_black");
   });
   cardDeleteButton.addEventListener("click", () => {
-    cardList.remove(cardDeleteButton.closest("li"));
+    cardElement.remove();
   });
   return cardElement;
 }
