@@ -38,13 +38,11 @@ const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
 const modal = document.querySelector(".modal");
-const modalCloseButton = document.querySelector(".modal__close-button");
+const modalCloseButton = modal.querySelector(".modal__close-button");
 
 //Selecting modal profile elements
-const modalProfileFormName = document.querySelector(
-  ".modal__form-name_profile"
-);
-const modalProfileFormDescription = document.querySelector(
+const modalProfileFormName = modal.querySelector(".modal__form-name_profile");
+const modalProfileFormDescription = modal.querySelector(
   ".modal__form-description_profile"
 );
 
@@ -90,7 +88,6 @@ function openProfilePopup() {
   openPopup();
 }
 
-function openImagePreview() {}
 //Function which will get card data
 function getCardData(cardData) {
   //Selecting card and cloning it same amount of times as array length
@@ -137,18 +134,18 @@ function renderCard(cardData) {
 }
 
 //Function which will save changes that we made with profile form
-function saveProfileFormChanges(event) {
+function modalProfileFormChanges(event) {
   event.preventDefault();
-  profileName.textContent = modalProfileFormName.value;
-  profileDescription.textContent = modalProfileFormDescription.value;
-  closePopup();
+  profileName.textContent = profileFormName.value;
+  profileDescription.textContent = profileFormDescription.value;
+  openPopup();
 }
 
 //Function which will add new place card
-function addNewPlaceCard(event) {
+function modalNewPlaceAddCardForm(event) {
   event.preventDefault();
-  const link = modalNewPlaceFormLink.value;
-  const name = modalNewPlaceFormTitle.value;
+  const link = newplaceFormLink.value;
+  const name = newplaceFormTitle.value;
   renderCard({
     name: name,
     link: link,
@@ -166,10 +163,10 @@ initialCards.forEach((cardData) => {
 /*-----------------------------------------------------------------------------------*/
 
 //Submit profile form
-modalProfileForm.addEventListener("submit", saveProfileFormChanges);
+modalProfileForm.addEventListener("submit", modalProfileFormChanges);
 
 //Submit new place form
-modalNewPlaceForm.addEventListener("submit", addNewPlaceCard);
+modalNewPlaceForm.addEventListener("submit", modalNewPlaceAddCardForm);
 
 /*-----------------------------------------------------------------------------------*/
 /*----------------------------------EVENT LISTENERS----------------------------------*/
