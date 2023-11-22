@@ -138,7 +138,7 @@ function modalProfileFormChanges(event) {
   event.preventDefault();
   profileName.textContent = profileFormName.value;
   profileDescription.textContent = profileFormDescription.value;
-  openPopup();
+  closePopup();
 }
 
 //Function which will add new place card
@@ -150,7 +150,7 @@ function modalNewPlaceAddCardForm(event) {
     name: name,
     link: link,
   });
-  openPopup();
+  closePopup();
 }
 
 //Function that will make all cards visible
