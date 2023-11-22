@@ -1,7 +1,7 @@
 /* Modal profile container */
 
 .modal__close-button_profile {
-  background-image: url(../images/close-icon.svg);
+  background-image: url(../modal-containers/close-icon.svg);
   border: none;
   background-color: transparent;
   background-position: center;
