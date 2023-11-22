@@ -49,9 +49,6 @@ const modalProfileFormDescription = document.querySelector(
   ".modal__form-description_profile"
 );
 const modalProfileForm = document.querySelector(".modal__form_profile");
-const modalProfileCloseButton = document.querySelector(
-  ".modal__close-button_profile"
-);
 
 //Selecting modal new place elements
 const modalNewPlaceAdd = document.querySelector("#modal-newplace");
@@ -62,18 +59,12 @@ const modalNewPlaceFormLink = document.querySelector(
   ".modal__form-url_newplace"
 );
 const modalNewPlaceForm = document.querySelector(".modal__form_newplace");
-const modalNewPlaceCloseButton = document.querySelector(
-  ".modal__close-button_newplace"
-);
 
 //Selecting modal image preview elements
 const modalImagePreview = document.querySelector("#modal-preview");
 const modalImagePreviewLink = document.querySelector(".modal__image_preview");
 const modalImagePreviewCaption = document.querySelector(
   ".modal__caption_preview"
-);
-const modalImagePreviewCloseButton = document.querySelector(
-  ".modal__close-button_preview"
 );
 
 //Selecting card list
