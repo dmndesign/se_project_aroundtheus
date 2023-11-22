@@ -90,6 +90,7 @@ function openProfilePopup() {
   openPopup();
 }
 
+function openImagePreview() {}
 //Function which will get card data
 function getCardData(cardData) {
   //Selecting card and cloning it same amount of times as array length
