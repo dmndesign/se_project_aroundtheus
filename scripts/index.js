@@ -38,29 +38,43 @@ const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
 const modal = document.querySelector(".modal");
-const modalCloseButton = modal.querySelector(".modal__close-button");
+const modalCloseButton = document.querySelector(".modal__close-button");
 
 //Selecting modal profile elements
-const modalProfileFormName = modal.querySelector(".modal__form-name_profile");
-const modalProfileFormDescription = modal.querySelector(
+const modalProfileEdit = document.querySelector("#modal-profile");
+const modalProfileFormName = document.querySelector(
+  ".modal__form-name_profile"
+);
+const modalProfileFormDescription = document.querySelector(
   ".modal__form-description_profile"
 );
+const modalProfileForm = document.querySelector(".modal__form_profile");
+const modalProfileCloseButton = document.querySelector(
+  ".modal__close-button_profile"
+);
 
-//Selecting modal newplace elements
+//Selecting modal new place elements
+const modalNewPlaceAdd = document.querySelector("#modal-newplace");
 const modalNewPlaceFormTitle = document.querySelector(
   ".modal__form-title_newplace"
 );
 const modalNewPlaceFormLink = document.querySelector(
   ".modal__form-url_newplace"
 );
-
-//Selecting modal form
-const modalProfileForm = document.querySelector(".modal__form_profile");
 const modalNewPlaceForm = document.querySelector(".modal__form_newplace");
+const modalNewPlaceCloseButton = document.querySelector(
+  ".modal__close-button_newplace"
+);
 
 //Selecting modal image preview elements
-const modalImagePreview = document.querySelector(".modal__image_preview");
-const modalImageCaption = document.querySelector(".modal__caption_preview");
+const modalImagePreview = document.querySelector("#modal-preview");
+const modalImagePreviewLink = document.querySelector(".modal__image_preview");
+const modalImagePreviewCaption = document.querySelector(
+  ".modal__caption_preview"
+);
+const modalImagePreviewCloseButton = document.querySelector(
+  ".modal__close-button_preview"
+);
 
 //Selecting card list
 const cardList = document.querySelector(".cards__list");
@@ -73,11 +87,11 @@ const cardTemplate =
 /*----------------------------------FUNCTIONS----------------------------------*/
 /*-----------------------------------------------------------------------------*/
 
-function openPopup() {
+function openPopup(modal) {
   modal.classList.add("modal_opened");
 }
 
-function closePopup() {
+function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
 /*Function that makes inputs values of name and description being
@@ -85,7 +99,7 @@ same as current name and description on page when form opened*/
 function openProfilePopup() {
   modalProfileFormName.value = profileName.textContent;
   modalProfileFormDescription.value = profileDescription.textContent;
-  openPopup();
+  openPopup(modalProfileEdit);
 }
 
 //Function which will get card data
@@ -120,9 +134,9 @@ function getCardData(cardData) {
 
   //OnClick event which will open image preview with caption
   cardImage.addEventListener("click", () => {
-    modalImagePreview.src = cardImage.src;
-    modalImageCaption.textContent = cardTitle.alt;
-    openPopup();
+    modalImagePreviewLink.src = cardImage.src;
+    modalImagePreviewCaption.textContent = cardImage.alt;
+    openPopup(modalImagePreview);
   });
 
   return cardElement;
@@ -136,21 +150,23 @@ function renderCard(cardData) {
 //Function which will save changes that we made with profile form
 function modalProfileFormChanges(event) {
   event.preventDefault();
-  profileName.textContent = profileFormName.value;
-  profileDescription.textContent = profileFormDescription.value;
-  closePopup();
+  profileName.textContent = modalProfileFormName.value;
+  profileDescription.textContent = modalProfileFormDescription.value;
+  closePopup(modalProfileEdit);
 }
 
 //Function which will add new place card
 function modalNewPlaceAddCardForm(event) {
   event.preventDefault();
-  const link = newplaceFormLink.value;
-  const name = newplaceFormTitle.value;
+  const link = modalNewPlaceFormLink.value;
+  const name = modalNewPlaceFormTitle.value;
   renderCard({
     name: name,
     link: link,
   });
-  closePopup();
+  modalNewPlaceFormLink.value = "";
+  modalNewPlaceFormTitle.value = "";
+  closePopup(modalNewPlaceAdd);
 }
 
 //Function that will make all cards visible
@@ -175,8 +191,24 @@ modalNewPlaceForm.addEventListener("submit", modalNewPlaceAddCardForm);
 //Open profile edit form
 profileEditButton.addEventListener("click", openProfilePopup);
 
-//Close any modal
-modalCloseButton.addEventListener("click", closePopup);
+//Close profile modal
+modalProfileCloseButton.addEventListener("click", () => {
+  closePopup(modalProfileEdit);
+});
+
+//Close new place modal
+modalNewPlaceCloseButton.addEventListener("click", () => {
+  closePopup(modalNewPlaceAdd);
+});
+
+//Close image preview modal and it's inputs will be empty
+modalImagePreviewCloseButton.addEventListener("click", () => {
+  modalNewPlaceFormLink.value = "";
+  modalNewPlaceFormTitle.value = "";
+  closePopup(modalImagePreview);
+});
 
 //Open form which will add new place
-profileAddCardButton.addEventListener("click", openPopup);
+profileAddCardButton.addEventListener("click", () => {
+  openPopup(modalNewPlaceAdd);
+});
