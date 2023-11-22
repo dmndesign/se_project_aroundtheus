@@ -1,38 +1,16 @@
-.preview {
-  position: fixed;
-  background-color: #00000080;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.3s, opacity 0.5s linear;
-  padding: 0 40px;
-}
-
-.preview_opened {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
-}
-
-.preview__container {
+.modal__container_preview {
   position: relative;
   margin: auto;
   background-color: transparent;
   padding: 90px 0;
   max-width: 100%;
 }
-
-.preview__image {
+.modal__image_preview {
   max-width: 100%;
   max-height: 540px;
 }
 
-.preview__close-button {
+.modal__close-button_preview {
   background-image: url(../images/Close\ Icon.svg);
   border: none;
   background-color: transparent;
@@ -47,7 +25,7 @@
   cursor: pointer;
 }
 
-.preview__caption {
+.modal__caption_preview {
   font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -58,19 +36,19 @@
 }
 
 @media screen and (max-width: 775px) {
-  .preview__close-button {
+  .modal__close-button_preview {
     width: 30px;
     height: 30px;
     top: 100px;
     right: -30px;
   }
 
-  .preview__container {
+  .modal__container_preview {
     max-width: 320px;
     padding: 134px 0px;
   }
 
-  .preview__image {
+  .modal__image_preview {
     max-height: auto;
   }
 }

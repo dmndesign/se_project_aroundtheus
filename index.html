@@ -42,29 +42,29 @@
       </footer>
     </div>
     <!--Profile Edit Popup-->
-    <div class="modal" id="profile-edit-modal">
-      <div class="modal__container">
+    <div class="modal" id="modal-profile">
+      <div class="modal__container modal__container_profile">
         <button
-          class="modal__close-button"
+          class="modal__close-button modal__close-button_profile"
           type="button"
           aria-label="close-button"
         ></button>
-        <h3 class="modal__title">Edit Profile</h3>
-        <form class="modal__form">
+        <h3 class="modal__title modal__title_profile">Edit Profile</h3>
+        <form class="modal__form modal__form_profile">
           <input
-            class="modal__form-name"
+            class="modal__form-name modal__form-name_profile"
             type="text"
             name="Name"
             placeholder="Name"
           />
           <input
-            class="modal__form-description"
+            class="modal__form-description modal__form-description_profile"
             type="text"
             name="About me"
             placeholder="Description"
           />
           <button
-            class="modal__save-button"
+            class="modal__submit-button modal__submit-button_profile"
             type="submit"
             aria-label="save-button"
           >
@@ -75,29 +75,29 @@
     </div>
     <!--End of profile edit pop up-->
     <!--Add new place pop up-->
-    <div class="newplace" id="newplace-popup">
-      <div class="newplace__container">
+    <div class="modal" id="modal-newplace">
+      <div class="modal__container modal__container_newplace">
         <button
-          class="newplace__close-button"
+          class="modal__close-button modal__close-button_newplace"
           type="button"
-          aria-label="newplace-close-button"
+          aria-label="close-button"
         ></button>
-        <h3 class="newplace__title">New Place</h3>
-        <form class="newplace__form">
+        <h3 class="modal__title modal__title_newplace">New Place</h3>
+        <form class="modal__form modal__form_newplace">
           <input
-            class="newplace__form-title"
+            class="modal__form-title modal__form-title_newplace"
             type="text"
             name="Title"
             placeholder="Title"
           />
           <input
-            class="newplace__form-url"
+            class="modal__form-url modal__form-url_newplace"
             type="url"
             name="link"
             placeholder="Image link"
           />
           <button
-            class="newplace__create-button"
+            class="modal__submit-button modal__submit-button_newplace"
             type="submit"
             aria-label="submit-button"
           >
@@ -108,15 +108,15 @@
     </div>
     <!--End of new place pop up-->
     <!--Card Preview-->
-    <div class="preview" id="preview-image">
-      <div class="preview__container">
+    <div class="modal" id="modal-image-preview">
+      <div class="modal__container modal__container_preview">
         <button
-          class="preview__close-button"
+          class="modal__close-button modal__close-button_preview"
           type="button"
-          aria-label="preview-close-button"
+          aria-label="close-button"
         ></button>
-        <img src="#" alt="" class="preview__image" />
-        <h3 class="preview__caption"></h3>
+        <img src="#" alt="" class="modal__image modal__image_preview" />
+        <h3 class="modal__caption modal__caption_preview"></h3>
       </div>
     </div>
     <!--End of card preview-->
