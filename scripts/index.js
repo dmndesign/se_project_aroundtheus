@@ -149,7 +149,7 @@ function renderCard(cardData) {
 }
 
 //Function which will save changes that we made with profile form
-function modalProfileFormChanges(event) {
+function saveProfileFormChanges(event) {
   event.preventDefault();
   profileName.textContent = modalProfileFormName.value;
   profileDescription.textContent = modalProfileFormDescription.value;
@@ -157,7 +157,7 @@ function modalProfileFormChanges(event) {
 }
 
 //Function which will add new place card
-function modalNewPlaceAddCardForm(event) {
+function addNewPlaceCard(event) {
   event.preventDefault();
   const link = modalNewPlaceFormLink.value;
   const name = modalNewPlaceFormTitle.value;
@@ -177,10 +177,10 @@ initialCards.forEach(renderCard);
 /*-----------------------------------------------------------------------------------*/
 
 //Submit profile form
-modalProfileForm.addEventListener("submit", modalProfileFormChanges);
+modalProfileForm.addEventListener("submit", saveProfileFormChanges);
 
 //Submit new place form
-modalNewPlaceForm.addEventListener("submit", modalNewPlaceAddCardForm);
+modalNewPlaceForm.addEventListener("submit", addNewPlaceCard);
 
 /*-----------------------------------------------------------------------------------*/
 /*----------------------------------EVENT LISTENERS----------------------------------*/
@@ -194,15 +194,6 @@ modalCloseButton.forEach((button) => {
   const modal = button.closest(".modal");
   button.addEventListener("click", () => closePopup(modal));
 });
-
-//Close new place modal and it's inputs will be empty
-modalNewPlaceCloseButton.addEventListener("click", () => {
-  modalNewPlaceFormLink.value = "";
-  modalNewPlaceFormTitle.value = "";
-  closePopup(modalNewPlaceAdd);
-});
-
-//Close image preview modal
 
 //Open form which will add new place
 profileAddCardButton.addEventListener("click", () => {
