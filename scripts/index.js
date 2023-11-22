@@ -164,15 +164,12 @@ function modalNewPlaceAddCardForm(event) {
     name: name,
     link: link,
   });
-  modalNewPlaceFormLink.value = "";
-  modalNewPlaceFormTitle.value = "";
+  event.target.reset();
   closePopup(modalNewPlaceAdd);
 }
 
 //Function that will make all cards visible
-initialCards.forEach((cardData) => {
-  renderCard(cardData);
-});
+initialCards.forEach(renderCard);
 
 /*-----------------------------------------------------------------------------------*/
 /*----------------------------------SUBMIT HANDLERS----------------------------------*/
@@ -196,15 +193,15 @@ modalProfileCloseButton.addEventListener("click", () => {
   closePopup(modalProfileEdit);
 });
 
-//Close new place modal
+//Close new place modal and it's inputs will be empty
 modalNewPlaceCloseButton.addEventListener("click", () => {
+  modalNewPlaceFormLink.value = "";
+  modalNewPlaceFormTitle.value = "";
   closePopup(modalNewPlaceAdd);
 });
 
-//Close image preview modal and it's inputs will be empty
+//Close image preview modal
 modalImagePreviewCloseButton.addEventListener("click", () => {
-  modalNewPlaceFormLink.value = "";
-  modalNewPlaceFormTitle.value = "";
   closePopup(modalImagePreview);
 });
 
