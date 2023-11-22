@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around the U.S</title>
+    <link href="./pages/index.css" rel="stylesheet" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header page__section">
+        <img class="header__logo" src="./images/logo.svg" alt="logo" />
+      </header>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            class="profile__image"
+            src="./images/jacques-cousteau.png"
+            alt="Profile Avatar"
+          />
+          <div class="profile__content">
+            <h1 class="profile__title">Jacques Cousteau</h1>
+            <button
+              class="profile__edit-button"
+              type="button"
+              aria-label="edit-button"
+            ></button>
+            <p class="profile__description">Explorer</p>
+          </div>
+          <button
+            class="profile__add-button"
+            type="button"
+            aria-label="add-button"
+          ></button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">© 2022 Around The U.S.</p>
+      </footer>
+    </div>
+    <!--Profile Edit Popup-->
+    <div class="modal" id="modal-profile">
+      <div class="modal__container modal__container_profile">
+        <button
+          class="modal__close-button modal__close-button_profile"
+          type="button"
+          aria-label="close-button"
+        ></button>
+        <h3 class="modal__title modal__title_profile">Edit Profile</h3>
+        <form class="modal__form modal__form_profile">
+          <input
+            class="modal__form-name modal__form-name_profile"
+            type="text"
+            name="Name"
+            placeholder="Name"
+          />
+          <input
+            class="modal__form-description modal__form-description_profile"
+            type="text"
+            name="About me"
+            placeholder="Description"
+          />
+          <button
+            class="modal__submit-button modal__submit-button_profile"
+            type="submit"
+            aria-label="save-button"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    <!--End of profile edit pop up-->
+    <!--Add new place pop up-->
+    <div class="modal" id="modal-newplace">
+      <div class="modal__container modal__container_newplace">
+        <button
+          class="modal__close-button modal__close-button_newplace"
+          type="button"
+          aria-label="close-button"
+        ></button>
+        <h3 class="modal__title modal__title_newplace">New Place</h3>
+        <form class="modal__form modal__form_newplace">
+          <input
+            class="modal__form-title modal__form-title_newplace"
+            type="text"
+            name="Title"
+            placeholder="Title"
+          />
+          <input
+            class="modal__form-url modal__form-url_newplace"
+            type="url"
+            name="link"
+            placeholder="Image link"
+          />
+          <button
+            class="modal__submit-button modal__submit-button_newplace"
+            type="submit"
+            aria-label="submit-button"
+          >
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+    <!--End of new place pop up-->
+    <!--Card Preview-->
+    <div class="modal" id="modal-image-preview">
+      <div class="modal__container modal__container_preview">
+        <button
+          class="modal__close-button modal__close-button_preview"
+          type="button"
+          aria-label="close-button"
+        ></button>
+        <img src="#" alt="" class="modal__image modal__image_preview" />
+        <h3 class="modal__caption modal__caption_preview"></h3>
+      </div>
+    </div>
+    <!--End of card preview-->
+    <!--Card render template-->
+    <template id="card-template">
+      <li class="card">
+        <img src="#" class="card__image" alt="" />
+        <button
+          class="card__delete-button"
+          type="button"
+          aria-label="delete-button"
+        ></button>
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button
+            class="card__like-button"
+            type="button"
+            aria-label="like-button"
+          ></button>
+        </div>
+      </li>
+    </template>
+    <!--End of card render template-->
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

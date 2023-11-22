@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  position: relative;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card__description {
+  display: flex;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  align-items: center;
+  padding: 25px 20px;
+}
+
+.card__like-button {
+  background: transparent url(../images/heart-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0px;
+  width: 21px;
+  height: 18px;
+  margin-left: auto;
+}
+
+.card__like-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.card__like-button_black {
+  background: transparent url(../images/heart-icon-black.svg);
+}
+
+.card__delete-button {
+  background: transparent url(../images/trash-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0px;
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.card__delete-button:hover {
+  background: transparent url(../images/trash-icon-hover.svg);
+  cursor: pointer;
+}
+
+.card__title {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+}
