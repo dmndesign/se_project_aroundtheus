@@ -38,7 +38,7 @@ const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
 const modal = document.querySelector(".modal");
-const modalCloseButton = document.querySelector(".modal__close-button");
+const modalCloseButton = document.querySelectorAll(".modal__close-button");
 
 //Selecting modal profile elements
 const modalProfileEdit = document.querySelector("#modal-profile");
@@ -135,7 +135,8 @@ function getCardData(cardData) {
   //OnClick event which will open image preview with caption
   cardImage.addEventListener("click", () => {
     modalImagePreviewLink.src = cardImage.src;
-    modalImagePreviewCaption.textContent = cardImage.alt;
+    modalImagePreviewLink.alt = cardImage.alt;
+    modalImagePreviewCaption.textContent = cardTitle.textContent;
     openPopup(modalImagePreview);
   });
 
@@ -188,9 +189,10 @@ modalNewPlaceForm.addEventListener("submit", modalNewPlaceAddCardForm);
 //Open profile edit form
 profileEditButton.addEventListener("click", openProfilePopup);
 
-//Close profile modal
-modalProfileCloseButton.addEventListener("click", () => {
-  closePopup(modalProfileEdit);
+//Close any modal
+modalCloseButton.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closePopup(modal));
 });
 
 //Close new place modal and it's inputs will be empty
@@ -201,9 +203,6 @@ modalNewPlaceCloseButton.addEventListener("click", () => {
 });
 
 //Close image preview modal
-modalImagePreviewCloseButton.addEventListener("click", () => {
-  closePopup(modalImagePreview);
-});
 
 //Open form which will add new place
 profileAddCardButton.addEventListener("click", () => {
