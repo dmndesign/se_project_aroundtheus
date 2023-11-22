@@ -38,7 +38,7 @@ const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
 const modal = document.querySelector(".modal");
-const modalCloseButton = document.querySelectorAll(".modal__close-button");
+const modalCloseButtons = document.querySelectorAll(".modal__close-button");
 
 //Selecting modal profile elements
 const modalProfileEdit = document.querySelector("#modal-profile");
@@ -181,7 +181,7 @@ modalNewPlaceForm.addEventListener("submit", addNewPlaceCard);
 profileEditButton.addEventListener("click", openProfilePopup);
 
 //Close any modal
-modalCloseButton.forEach((button) => {
+modalCloseButtons.forEach((button) => {
   const modal = button.closest(".modal");
   button.addEventListener("click", () => closePopup(modal));
 });
