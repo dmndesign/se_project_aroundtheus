@@ -43,20 +43,20 @@ const modalCloseButtons = document.querySelectorAll(".modal__close-button");
 //Selecting modal profile elements
 const modalProfileEdit = document.querySelector("#modal-profile");
 const modalProfileFormName = document.querySelector(
-  ".modal__form-name_profile"
+  ".modal__input-name_profile"
 );
 const modalProfileFormDescription = document.querySelector(
-  ".modal__form-description_profile"
+  ".modal__input-description_profile"
 );
 const modalProfileForm = document.querySelector(".modal__form_profile");
 
 //Selecting modal new place elements
 const modalNewPlaceAdd = document.querySelector("#modal-newplace");
 const modalNewPlaceFormTitle = document.querySelector(
-  ".modal__form-title_newplace"
+  ".modal__input-title_newplace"
 );
 const modalNewPlaceFormLink = document.querySelector(
-  ".modal__form-url_newplace"
+  ".modal__input-url_newplace"
 );
 const modalNewPlaceForm = document.querySelector(".modal__form_newplace");
 

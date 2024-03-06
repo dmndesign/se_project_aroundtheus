@@ -1,6 +1,6 @@
 /* Modal form */
 
-.modal__form-name {
+.modal__input-name {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -15,7 +15,7 @@
   border-radius: 0px;
 }
 
-.modal__form-description {
+.modal__input-description {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -30,7 +30,7 @@
   border-radius: 0px;
 }
 
-.modal__form-title {
+.modal__input-title {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -45,7 +45,7 @@
   border-radius: 0px;
 }
 
-.modal__form-url {
+.modal__input-url {
   font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -61,17 +61,17 @@
 }
 
 @media screen and (max-width: 775px) {
-  .modal__form-title {
+  .modal__input-title {
     margin: 0 0 30px;
   }
-  .modal__form-url {
+  .modal__input-url {
     margin: 0 0 45px;
   }
-  .modal__form-name {
+  .modal__input-name {
     margin: 0 0 30px;
   }
 
-  .modal__form-description {
+  .modal__input-description {
     margin: 0 0 45px;
   }
 }

@@ -55,7 +55,7 @@
             required
             minlength="2"
             maxlength="40"
-            class="modal__form-name modal__form-name_profile"
+            class="modal__input modal__input-name modal__input-name_profile"
             type="text"
             name="Name"
             placeholder="Name"
@@ -64,7 +64,7 @@
             required
             minlength="2"
             maxlength="200"
-            class="modal__form-description modal__form-description_profile"
+            class="modal__input modal__input-description modal__input-description_profile"
             type="text"
             name="About me"
             placeholder="Description"
@@ -91,13 +91,17 @@
         <h3 class="modal__title modal__title_newplace">New Place</h3>
         <form class="modal__form modal__form_newplace">
           <input
-            class="modal__form-title modal__form-title_newplace"
+            required
+            minlength="1"
+            maxlength="30"
+            class="modal__input modal__input-title modal__input-title_newplace"
             type="text"
             name="Title"
             placeholder="Title"
           />
           <input
-            class="modal__form-url modal__form-url_newplace"
+            required
+            class="modal__input modal__input-url modal__input-url_newplace"
             type="url"
             name="link"
             placeholder="Image link"
@@ -147,6 +151,6 @@
     </template>
     <!--End of card render template-->
     <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
