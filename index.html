@@ -58,8 +58,10 @@
             class="modal__input modal__input-name modal__input-name_profile"
             type="text"
             name="Name"
+            id="modal-name"
             placeholder="Name"
           />
+          <span class="modal__error" id="modal-name-error"></span>
           <input
             required
             minlength="2"
@@ -67,12 +69,15 @@
             class="modal__input modal__input-description modal__input-description_profile"
             type="text"
             name="About me"
+            id="modal-description"
             placeholder="Description"
           />
+          <span class="modal__error" id="modal-description-error"></span>
           <button
-            class="modal__submit-button modal__submit-button_profile"
+            class="modal__submit-button modal__submit-button_disabled modal__submit-button_profile"
             type="submit"
             aria-label="save-button"
+            disabled
           >
             Save
           </button>
@@ -97,19 +102,24 @@
             class="modal__input modal__input-title modal__input-title_newplace"
             type="text"
             name="Title"
+            id="newplace-title"
             placeholder="Title"
           />
+          <span class="modal__error" id="newplace-title-error"></span>
           <input
             required
             class="modal__input modal__input-url modal__input-url_newplace"
             type="url"
             name="link"
+            id="newplace-link"
             placeholder="Image link"
           />
+          <span class="modal__error" id="newplace-link-error"></span>
           <button
-            class="modal__submit-button modal__submit-button_newplace"
+            class="modal__submit-button modal__submit-button_disabled modal__submit-button_newplace"
             type="submit"
             aria-label="submit-button"
+            disabled
           >
             Create
           </button>
