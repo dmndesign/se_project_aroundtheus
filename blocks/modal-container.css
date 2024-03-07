@@ -54,6 +54,14 @@
   border: none;
   background-color: black;
   cursor: pointer;
+  margin: 45px 0 0;
+}
+
+.modal__submit-button_disabled {
+  border: solid 1px rgb(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: rgb(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .modal__submit-button:hover {
