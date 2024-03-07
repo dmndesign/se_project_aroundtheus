@@ -191,18 +191,19 @@ profileAddCardButton.addEventListener("click", () => {
   openPopup(modalNewPlaceAdd);
 });
 
-//Close pop up by clicking on overlay
-//Selecting Modal Container
+//selecting modal container
 const modalContainer = document.querySelector(".modal__container");
-//If window doesn't contain elements of modal container closePopup
-modalContainer.addEventListener("click", (evt) => {
+//close popup by clicking on overlay
+modal.addEventListener("click", (evt) => {
+  //If window doesn't contain elements of modal container closePopup
   if (!modalContainer.contains(evt.target)) {
-    modalContainer.classList.remove(".modal_opened");
+    closePopup(modal);
   }
 });
+
 //If clicking on Esc pop up should close
-modalContainer.addEventListener("keydown", (evt) => {
+modal.addEventListener("keydown", (evt) => {
   if (evt.key === Esc) {
-    modalContainer.classList.remove(".modal_opened");
+    closePopup(modal);
   }
 });
