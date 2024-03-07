@@ -191,14 +191,17 @@ profileAddCardButton.addEventListener("click", () => {
   openPopup(modalNewPlaceAdd);
 });
 
-//selecting modal container
-const modalContainer = document.querySelector(".modal__container");
-//close popup by clicking on overlay
-modal.addEventListener("click", (evt) => {
-  //If window doesn't contain elements of modal container closePopup
-  if (!modalContainer.contains(evt.target)) {
-    closePopup(modal);
-  }
+//selecting modal containers
+const modalContainers = document.querySelectorAll(".modal__container");
+//for each modal container...
+modalContainers.forEach((modalContainer) => {
+  //modal close by clicking on overlay
+  modal.addEventListener("click", (evt) => {
+    //If window doesn't contain elements of modal container closePopup
+    if (!modalContainer.contains(evt.target)) {
+      closePopup(modal);
+    }
+  });
 });
 
 //If clicking on Esc pop up should close
