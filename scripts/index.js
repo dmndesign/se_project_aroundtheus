@@ -37,7 +37,7 @@ const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
-const modal = document.querySelector(".modal");
+const modal = document.querySelectorAll(".modal");
 const modalCloseButtons = document.querySelectorAll(".modal__close-button");
 
 //Selecting modal profile elements
