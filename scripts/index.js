@@ -80,10 +80,12 @@ const cardTemplate =
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeWithEscape);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeWithEscape);
 }
 /*Function that makes inputs values of name and description being
 same as current name and description on page when form opened*/
@@ -201,9 +203,15 @@ modal.forEach((modal) => {
       closePopup(modal);
     }
   });
-  modal.addEventListener("keydown", (evt) => {
-    if (evt.key === Escape) {
-      closePopup(modal);
-    }
-  });
 });
+
+//Close with escape click
+function closeWithEscape(evt) {
+  //if event key is escape
+  if (evt.key === "Escape") {
+    //selecting modal opened class
+    const modalOpened = document.querySelector(".modal_opened");
+    //close popup function
+    closePopup(modalOpened);
+  }
+}
