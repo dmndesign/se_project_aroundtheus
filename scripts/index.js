@@ -37,7 +37,7 @@ const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 
 //Selecting modal elements
-const modal = document.querySelectorAll(".modal");
+const allModals = document.querySelectorAll(".modal");
 const modalCloseButtons = document.querySelectorAll(".modal__close-button");
 
 //Selecting modal profile elements
@@ -194,7 +194,7 @@ profileAddCardButton.addEventListener("click", () => {
 });
 
 //close popup by clicking on overlay
-modal.forEach((modal) => {
+allModals.forEach((modal) => {
   //click evenet for each modal
   modal.addEventListener("click", (evt) => {
     //if event target contain modal opened class
