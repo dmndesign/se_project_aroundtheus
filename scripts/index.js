@@ -39,7 +39,6 @@ const profileDescription = document.querySelector(".profile__description");
 //Selecting modal elements
 const modal = document.querySelectorAll(".modal");
 const modalCloseButtons = document.querySelectorAll(".modal__close-button");
-const modalContainers = document.querySelectorAll(".modal__container");
 
 //Selecting modal profile elements
 const modalProfileEdit = document.querySelector("#modal-profile");
@@ -192,23 +191,19 @@ profileAddCardButton.addEventListener("click", () => {
   openPopup(modalNewPlaceAdd);
 });
 
-//for each modal container...
-modalContainers.forEach((modalContainer) => {
-  //modal close by clicking on overlay
-  modalContainer.addEventListener("click", (evt) => {
-    //If window doesn't contain elements of modal container closePopup
-    if (!modalContainer.contains(evt.target)) {
+//close popup by clicking on overlay
+modal.forEach((modal) => {
+  //click evenet for each modal
+  modal.addEventListener("click", (evt) => {
+    //if event target contain modal opened class
+    if (evt.target.classList.contains("modal_opened")) {
+      //removes modal opened class
       closePopup(modal);
     }
   });
-});
-
-//If clicking on Esc pop up should close
-
-document.addEventListener("keydown", (evt) => {
-  if (evt.key === "Esc") {
-    if (modal.classList.contains("modal_opened")) {
+  modal.addEventListener("keydown", (evt) => {
+    if (evt.key === Escape) {
       closePopup(modal);
     }
-  }
+  });
 });
